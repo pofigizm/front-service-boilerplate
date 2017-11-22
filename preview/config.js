@@ -83,7 +83,9 @@ const loadStories = () => {
           st.add('State', () => (
             <div className='storybook-all-wrapper'>
               <div>
-                <preview.State Target={Story} action={action} />
+                <MuiThemeProvider theme={theme}>
+                  <preview.State Target={Story} action={action} />
+                </MuiThemeProvider>
               </div>
             </div>
           ))
