@@ -1,5 +1,6 @@
 import isEnabled from 'front-core/src/flags'
-import { Storage, PieChart } from 'front-core/src/icons'
+import Storage from 'material-ui-icons/Storage'
+import PieChart from 'material-ui-icons/PieChart'
 
 const title = 'App title'
 

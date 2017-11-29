@@ -19,9 +19,9 @@ const list = entries => ({
   entries,
 })
 
-export const getEntry = id => async (dispatch, getState, { requestSmth }) => {
+export const getEntry = id => async (dispatch, getState, { requestJsonrpc }) => {
   await dispatch(listState(dataStates.loading))
-  const { error, result } = await requestSmth('Request.Method', { id })
+  const { error, result } = await requestJsonrpc('Request.Method', { id })
 
   if (error) {
     await dispatch(listState(dataStates.loading, error))

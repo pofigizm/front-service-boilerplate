@@ -1,4 +1,4 @@
-import { connect } from 'front-core/src/react-redux'
+import { connect } from 'react-redux'
 import { getLocation } from 'front-core/src/selectors'
 import { apiExampleSelectors } from './api'
 

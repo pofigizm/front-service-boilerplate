@@ -1,3 +1,4 @@
+/* eslint-disable no-case-declarations */
 import { listToHash, deepAssign } from 'front-core/src/utils/lib-helpers'
 import { dataStates } from 'front-core/src/utils/constants'
 

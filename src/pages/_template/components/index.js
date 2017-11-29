@@ -1,8 +1,8 @@
 import React, { PureComponent } from 'react'
 import cn from 'classnames'
 
-import { withStyles } from 'front-core/src/styles'
-import Typography from 'front-core/src/components/typography'
+import { withStyles } from 'front-core/src/components/styles'
+import { Typography } from 'front-core/src/components'
 
 const debug = require('debug')(`${__PROJECT__}:${__dirname}`)
 

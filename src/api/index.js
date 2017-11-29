@@ -1,4 +1,4 @@
-import { createApiRequest, checkToken, legacyRequests } from 'front-core/src/api'
+import { createApiRequest, checkToken, restRequests } from 'front-core/src/api'
 
 const getApiRequests = (hosts) => {
   // TODO more safe (and move to helpers)
@@ -15,12 +15,12 @@ const getApiRequests = (hosts) => {
   const refreshToken = () => requestUser('Token.Refresh', null, true)
   const check = checkToken(refreshToken)
 
-  const requestSmth = createApiRequest(cfg.api, { check })
-  const requestLegacy = createApiRequest(cfg.api, { fetch: legacyRequests(cfg.api) })
+  const requestJsonrpc = createApiRequest(cfg.api, { check })
+  const requestRest = createApiRequest(cfg.api, { fetch: restRequests(cfg.api) })
 
   return {
-    requestSmth,
-    requestLegacy,
+    requestJsonrpc,
+    requestRest,
   }
 }
 
