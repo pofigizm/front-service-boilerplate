@@ -1,5 +1,5 @@
 import React from 'react'
-import render from 'front-core/src/root'
+import { root } from 'front-core/src/root'
 import { setFlags } from 'front-core/src/flags'
 
 /* eslint-disable no-console */
@@ -11,7 +11,7 @@ const exec = (config) => {
   const apiRequests = getApiRequests(config.hosts)
   const routes = require('./routes')
 
-  render({
+  root({
     ...routes,
     apiRequests,
     config,
