@@ -4,11 +4,11 @@
   "main": "src/index.js",
   "license": "MIT",
   "scripts": {
-    "build": "front-core build",
-    "build-dev": "front-core build-dev",
+    "build": "BUILD_TS=1 front-core build",
+    "build-dev": "BUILD_TS=1 front-core build-dev",
     "lint": "eslint --fix src server",
     "preview": "start-storybook -p 9002 -c ./preview",
-    "start": "DEBUG=front-core:* front-core start"
+    "start": "DEBUG=front-core:* BUILD_TS=1 front-core start"
   },
   "dependencies": {
     "front-core": "0.2.0",

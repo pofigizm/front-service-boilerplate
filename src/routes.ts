@@ -1,10 +1,11 @@
 import isEnabled from 'front-core/src/flags'
 import Storage from 'material-ui-icons/Storage'
 import PieChart from 'material-ui-icons/PieChart'
+import { Menu, Route, Routes } from 'front-core/src/root.d'
 
-const title = 'App title'
+const title: string = 'App title'
 
-const routes = {
+const routes: Routes<Route> = {
   root: {
     path: '/',
     modulePath: '_template',
@@ -22,7 +23,7 @@ const routes = {
   },
 }
 
-const menu = [
+const menu: Menu = [
   {
     name: 'Root',
     Icon: Storage,
