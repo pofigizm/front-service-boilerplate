@@ -1,4 +1,4 @@
-import prepareActions from 'src/utils/actions'
+import prepareActions from 'front-core/src/utils/actions'
 
 export const STORE_KEY = 'template'
 export const ACTIONS = prepareActions([

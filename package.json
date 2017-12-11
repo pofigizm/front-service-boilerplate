@@ -1,7 +1,7 @@
 {
   "name": "front-service-boliarplate",
   "version": "0.2.0",
-  "main": "src/index.js",
+  "main": "src",
   "license": "MIT",
   "scripts": {
     "build": "BUILD_TS=1 front-core build",

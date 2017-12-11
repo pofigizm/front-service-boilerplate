@@ -20,7 +20,7 @@ const list = entries => ({
 })
 
 export const getEntry = id => async (dispatch, getState, { requestJsonrpc }) => {
-  await dispatch(listState(dataStates.loading))
+  await dispatch(listState(dataStates.loading, undefined))
   const { error, result } = await requestJsonrpc('Request.Method', { id })
 
   if (error) {
