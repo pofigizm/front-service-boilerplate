@@ -1,4 +1,4 @@
-import isEnabled from 'front-core/src/flags'
+import { isEnabled } from 'front-core/src/flags'
 import Storage from 'material-ui-icons/Storage'
 import PieChart from 'material-ui-icons/PieChart'
 import { Menu, Routes } from 'front-core/src/root.d'
@@ -36,12 +36,12 @@ const menu: Menu = [
     link: '/template',
   },
 
-  isEnabled('feature-page') && {
+  ...(isEnabled('feature-page') ? [{
     name: 'Page with flag',
     Icon: Storage,
     link: '/page-under-flag',
-  },
-].filter(Boolean)
+  }] : []),
+]
 
 export {
   title,
