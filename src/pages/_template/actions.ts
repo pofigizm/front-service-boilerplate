@@ -5,16 +5,14 @@ const {
   BASE_ACTION,
 } = ACTIONS
 
-export const baseAction = value => (dispatch) => {
-  // do smth
+export const baseAction = () => (dispatch) => {
   dispatch({
     type: BASE_ACTION,
-    value,
   })
 }
 
 export const init = () => async (dispatch) => {
-  const { error } = await dispatch(apiExampleActions.getEntry())
+  const { error } = await dispatch(apiExampleActions.getEntry(undefined))
   if (error) return null
 
   return dispatch(baseAction())

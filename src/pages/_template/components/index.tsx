@@ -1,5 +1,5 @@
-import React, { PureComponent } from 'react'
-import cn from 'classnames'
+import * as React from 'react'
+import * as cn from 'classnames'
 
 import { withStyles } from 'front-core/src/components/styles'
 import { Typography } from 'front-core/src/components'
@@ -14,7 +14,12 @@ const styles = () => ({
   },
 })
 
-class Template extends PureComponent {
+interface Template {
+  classes: any
+  location: any
+}
+
+class Template extends React.PureComponent<Template> {
   render() {
     const { classes, location } = this.props
     const propsJson = JSON.stringify(this.props, null, 2)
@@ -23,11 +28,11 @@ class Template extends PureComponent {
     return (
       <div className={cn(classes.root)}>
         <Typography type="title" className={cn(classes.title)}>
-          { location.type }
+          {location.type}
         </Typography>
         <Typography>
           <pre>
-            { propsJson }
+            {propsJson}
           </pre>
         </Typography>
       </div>

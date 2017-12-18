@@ -1,11 +1,24 @@
 import { createApiRequest, checkToken, restRequests } from 'front-core/src/api'
+import { Config, ConfigItem, ApiRequest } from 'front-core/src/api/index.d'
 
-const getApiRequests = (hosts) => {
+interface Hosts {
+  [key: string]: string
+}
+
+interface ApiRequests {
+  [key: string]: ApiRequest
+}
+
+interface GetApiRequests {
+  (hosts: Hosts): ApiRequests
+}
+
+const getApiRequests: GetApiRequests = (hosts) => {
   // TODO more safe (and move to helpers)
-  const cfg = Object.keys(hosts)
+  const cfg: Config = Object.keys(hosts)
     .reduce((acc, el) => ({
       ...acc,
-      [el]: {
+      [el]: <ConfigItem> {
         key: el,
         url: hosts[el],
       },

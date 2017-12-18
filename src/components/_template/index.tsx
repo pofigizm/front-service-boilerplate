@@ -1,5 +1,5 @@
-import React, { PureComponent } from 'react'
-import cn from 'classnames'
+import * as React from 'react'
+import * as cn from 'classnames'
 import { withStyles } from 'front-core/src/components/styles'
 
 const styles = () => ({
@@ -7,12 +7,17 @@ const styles = () => ({
   },
 })
 
-class Template extends PureComponent {
+interface Template {
+  classes: any
+  value: string
+}
+
+class Template extends React.PureComponent<Template> {
   render() {
     const { classes, value } = this.props
     return (
       <div className={cn(classes.root)}>
-        Template of base component with value: { value }
+        Template of base component with value: {value}
       </div>
     )
   }

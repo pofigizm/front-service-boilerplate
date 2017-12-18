@@ -1,25 +1,25 @@
 {
   "name": "front-service-boliarplate",
   "version": "0.2.0",
-  "main": "src/index.js",
+  "main": "src",
   "license": "MIT",
   "scripts": {
-    "build": "front-core build",
-    "build-dev": "front-core build-dev",
+    "build": "BUILD_TS=1 front-core build",
+    "build-dev": "BUILD_TS=1 front-core build-dev",
     "lint": "eslint --fix src server",
     "preview": "start-storybook -p 9002 -c ./preview",
-    "start": "DEBUG=front-core:* front-core start"
+    "start": "DEBUG=front-core:* BUILD_TS=1 front-core start"
   },
   "dependencies": {
-    "front-core": "0.2.0",
+    "front-core": "0.3.1",
     "react": "16.2.0",
     "react-dom": "16.2.0"
   },
   "devDependencies": {
-    "@storybook/addon-actions": "3.2.16",
-    "@storybook/react": "3.2.16",
-    "babel-eslint": "8.0.2",
-    "eslint": "4.12.0",
+    "@storybook/addon-actions": "3.2.17",
+    "@storybook/react": "3.2.17",
+    "babel-eslint": "8.0.3",
+    "eslint": "4.13.1",
     "eslint-config-pofigizm": "0.2.2"
   },
   "eslintConfig": {

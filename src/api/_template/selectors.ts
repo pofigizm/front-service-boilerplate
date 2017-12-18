@@ -7,5 +7,5 @@ export const getEntries = state => getState(state).entries
 
 export const getArrayOfEntries = create(
   getEntries,
-  entries => Object.values(entries),
+  entries => (<any>Object).values(entries),
 )
