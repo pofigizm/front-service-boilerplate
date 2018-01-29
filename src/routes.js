@@ -1,11 +1,10 @@
 import { isEnabled } from 'front-core/src/flags'
 import Storage from 'material-ui-icons/Storage'
 import PieChart from 'material-ui-icons/PieChart'
-import { Menu, Routes } from 'front-core/src/root.d'
 
 const title: string = 'App title'
 
-const routes: Routes = {
+const routes = {
   root: {
     path: '/',
     modulePath: '_template',
@@ -17,13 +16,15 @@ const routes: Routes = {
     role: true,
   },
 
-  feature: {
-    path: '/page-under-flag',
-    modulePath: '_template',
-  },
+  ...(isEnabled('feature-page') ? {
+    feature: {
+      path: '/page-under-flag',
+      modulePath: '_template',
+    },
+  } : {}),
 }
 
-const menu: Menu = [
+const menu = [
   {
     name: 'Root',
     Icon: Storage,
