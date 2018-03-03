@@ -1,26 +1,31 @@
 {
   "name": "front-service-boliarplate",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "main": "src",
   "license": "MIT",
   "scripts": {
     "build": "BUILD_TS=1 front-core build",
     "build-dev": "BUILD_TS=1 front-core build-dev",
     "lint": "eslint --fix src server",
-    "preview": "start-storybook -p 9002 -c ./preview",
+    "preview": "BUILD_TS=1 start-storybook -p 9002 -c ./preview",
     "start": "DEBUG=front-core:* BUILD_TS=1 front-core start"
   },
   "dependencies": {
-    "front-core": "0.6.0",
+    "front-core": "0.8.0",
+    "material-ui": "1.0.0-beta.35",
+    "material-ui-icons": "1.0.0-beta.35",
     "react": "16.2.0",
     "react-dom": "16.2.0"
   },
   "devDependencies": {
-    "@storybook/addon-actions": "3.3.11",
-    "@storybook/react": "3.3.11",
-    "babel-eslint": "8.2.1",
-    "eslint": "4.16.0",
-    "eslint-config-pofigizm": "0.3.2"
+    "@storybook/addon-actions": "3.3.14",
+    "@storybook/addons": "3.3.14",
+    "@storybook/react": "3.3.14",
+    "babel-eslint": "8.2.2",
+    "eslint": "4.18.2",
+    "eslint-config-pofigizm": "0.3.2",
+    "ts-loader": "3.5.0",
+    "typescript": "2.7.2"
   },
   "eslintConfig": {
     "extends": "pofigizm"

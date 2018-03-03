@@ -27,25 +27,25 @@ const Render = ({ children }) => (
 const components = require.context(
   '../src/components',
   true,
-  /(.*)\/index\.js$/
+  /(.*)\/index\.(js|ts|tsx)$/
 )
 
 const componentsPreview = require.context(
   '../src/components',
   true,
-  /(.*)\/index\.preview\.js$/
+  /(.*)\/index\.preview\.(js|ts|tsx)$/
 )
 
 // const coreComponents = require.context(
 //   '../node_modules/front-core/src/components',
 //   true,
-//   /(.*)\/index\.js$/
+//   /(.*)\/index\.(js|ts|tsx)$/
 // )
 
 // const coreComponentsPreview = require.context(
 //   '../node_modules/front-core/src/components',
 //   true,
-//   /(.*)\/index\.preview\.js$/
+//   /(.*)\/index\.preview\.(js|ts|tsx)$/
 // )
 
 const getData = (prefix, comps, pres) => {
